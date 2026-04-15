@@ -858,18 +858,21 @@ const LIMPEZA_CTOS = [
   document.getElementById('limpezaCtos').innerHTML = html;
 })();
 <script>
-function showPg(id, el){
+window.showPg = function(id, el){
+  console.log("clicou:", id);
+
   document.querySelectorAll('.pg').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.ni').forEach(n => n.classList.remove('active'));
 
   const page = document.getElementById('pg-' + id);
+
   if(page){
     page.classList.add('active');
     el.classList.add('active');
   } else {
-    console.error('Página não encontrada:', 'pg-' + id);
+    console.error('NÃO ACHOU:', 'pg-' + id);
   }
-}
+};
 </script>
 </body>
 </html>
